@@ -1,11 +1,12 @@
-Simple Echo by Oscar Sanchez
---------------------------------------------------------------------------------
+# Simple Echo
+by Oscar Sanchez
+
 This project contains a simple talker and listener program that, given
 a message, will talk to a port through a host, and send a message that
 will be picked up by the listener program and echoed back.
 
-Installation
---------------------------------------------------------------------------------
+## Installation
+
 The project is in C; I've included a simple Makefile, so to install it, just run
 "make" in the directory.
 
@@ -13,14 +14,16 @@ Note: This won't work on Windows, because I'm using the linux libraries and not
 winsockets. Though if you'd like to run this in windows, just change the library
 used at the top of the talker.c and listener.c files.
 
-Usage
---------------------------------------------------------------------------------
+## Usage
+
+```bash
 talker [-v] -p port -h host message    
 listener [-v] -p port
+```
 
-Description
---------------------------------------------------------------------------------
-listener binds to the given UDP port, listens for a packet
+## Description
+
+`listener` binds to the given UDP port, listens for a packet
 and echos it back to the source port and source IP.
 
 talker sends the given message in a UDP packet to the given
@@ -32,10 +35,10 @@ The verbose option (-v) will have the listener and talker
 print to stdout the source and destination port and IP of 
 the packets that arrive.
     
-Example Use
---------------------------------------------------------------------------------
+## Example Use
+
 On one terminal:
-$ listener -v -p 8080
+`$ listener -v -p 8080`
 
 On a second terminal:
-$ talker -v -p 8080 -h localhost 'Hey there, coder!'
+`$ talker -v -p 8080 -h localhost 'Hey there, coder!'`
